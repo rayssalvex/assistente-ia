@@ -1,0 +1,29 @@
+{
+  "name": "projeto-6",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Este projeto é um assistente de inteligência artificial simples desenvolvido com **HTML**, **CSS** e **JavaScript puro**. Ele utiliza a **API da OpenAI** para gerar respostas com base nas perguntas feitas pelo usuário. O objetivo do projeto é aprender como integrar APIs externas, criar interfaces responsivas e melhorar a experiência do usuário.",
+  "main": "script.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "rayssalvex",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayssalvex/Projeto_6.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rayssalvex/Projeto_6/issues"
+  },
+  "homepage": "https://github.com/rayssalvex/Projeto_6#readme"
+}
