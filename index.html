@@ -5,7 +5,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assistente de Meta</title>
+  <title>Seu Assistente de IA </title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -17,46 +17,53 @@
 </header>
 <main>
   <section class="layout">
-    <!-- Coluna da esquerda -->
-    <div class="welcome">
-      <h2>Bem-vindo ao Assistente de IA</h2>
-      <p>
-        Configure sua API key ao lado e comece a conversar com a
-        inteligência artificial.
-      </p>
-      <div class="welcome-features">
-        <div class="feature">
-          <span class="feature-icon">🚀</span>
-          <span>Respostas rápidas e precisas</span>
-        </div>
-        <div class="feature">
-          <span class="feature-icon">💾</span>
-          <span>Histórico de conversas</span>
-        </div>
-        <div class="feature">
-          <span class="feature-icon">🎨</span>
-          <span>Interface moderna e responsiva</span>
-        </div>
+  <!-- Coluna da esquerda -->
+  <div class="welcome">
+    <h2>Bem-vindo ao Assistente de IA</h2>
+    <p>
+      Configure sua API key ao lado e comece a conversar com a
+      inteligência artificial.
+    </p>
+    <div class="welcome-features">
+      <div class="feature">
+        <span class="feature-icon">🚀</span>
+        <span>Respostas rápidas e precisas</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">💾</span>
+        <span>Histórico de conversas</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🎨</span>
+        <span>Interface moderna e responsiva</span>
       </div>
     </div>
+  </div>
 
-    <div class="main-box">
-      <h2>Assistente de Meta</h2>
-      <form id="form">
-    <input id="apiKey" type="password" placeholder="Insira sua chave da API..." required>
-    <select id="gameSelect">
-      <option value="openia">OpenAI (GPT)</option>
-      <option value="gemini">Gemini AI</option>
-    </select>
-    <input id="questionInput" type="text" placeholder="Escreva aqui sua pergunta" required>
-    <!-- botão vai ficar embaixo sozinho -->
-    <button id="askButton">Perguntar</button>
-  </form>
-      <div id="aiResponse" class="hidden">
-        <div class="response-content"></div>
-      </div>
+  <!-- Coluna do meio: perguntas/respostas -->
+  <div class="main-box">
+    <h2>Seu Assistente Inteligente</h2>
+    <form id="form">
+      <input id="apiKey" type="password" placeholder="Insira sua chave da API..." required>
+      <select id="gameSelect">
+        <option value="openai">OpenAI (GPT)</option>
+        <option value="gemini">Gemini AI</option>
+      </select>
+      <input id="questionInput" type="text" placeholder="Escreva aqui sua pergunta" required>
+      <button id="askButton">Perguntar</button>
+    </form>
+    <div id="aiResponse" class="hidden">
+      <div class="response-content"></div>
     </div>
-  </section>
+  </div>
+
+  <!-- Coluna da direita: histórico -->
+  <div class="history-box">
+    <h2>Histórico</h2>
+    <div id="history" class="history"></div>
+    <button id="clearHistory">Limpar histórico</button>
+  </div>
+</section>
 </main>
 
     <footer>

@@ -5,6 +5,8 @@ const askButton = document.getElementById("askButton");
 const aiResponse = document.getElementById("aiResponse");
 const responseContent = document.querySelector(".response-content");
 const gameSelect = document.getElementById("gameSelect");
+const historyDiv = document.getElementById("history");
+const clearHistoryBtn = document.getElementById("clearHistory");
 
 // Configura opções de provider
 gameSelect.innerHTML = `
@@ -27,6 +29,8 @@ form.addEventListener("submit", async (e) => {
 
   askButton.disabled = true;
   askButton.textContent = "Carregando...";
+  responseContent.textContent = "IA está pensando...";
+  aiResponse.classList.remove("hidden");
 
   try {
     const res = await fetch("http://localhost:3000/api/ask", {
@@ -41,19 +45,31 @@ form.addEventListener("submit", async (e) => {
       responseContent.textContent = "Erro: " + data.error;
     } else {
       responseContent.textContent = data.answer;
+
+      // Adiciona ao histórico
+      const newEntry = document.createElement("div");
+      newEntry.classList.add("history-entry");
+      newEntry.innerHTML = `
+        <strong>P:</strong> ${question}<br>
+        <strong>R:</strong> ${data.answer}
+      `;
+      historyDiv.prepend(newEntry);
     }
 
-    aiResponse.classList.remove("hidden");
   } catch (err) {
     responseContent.textContent = "Erro ao conectar ao servidor.";
-    aiResponse.classList.remove("hidden");
   }
 
   askButton.disabled = false;
   askButton.textContent = "Perguntar";
 });
 
-// ---- Dark Mode ----
+// Botão de limpar histórico
+clearHistoryBtn.addEventListener("click", () => {
+  historyDiv.innerHTML = "";
+});
+
+// Dark/Light mode
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 
